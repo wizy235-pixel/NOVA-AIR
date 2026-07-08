@@ -1,185 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account - Airline</title>
-    <link rel="stylesheet" href="static.css">
-    <style>
-        .back-link {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
+    <title>Create Account</title>
 
-        .back-link:hover {
-            color: #fff;
-            transform: translateX(-5px);
-        }
+    <link rel="stylesheet" href="style.css">
 
-        .back-link::before {
-            content: '←';
-            font-size: 18px;
-        }
-
-        .container {
-            position: relative;
-        }
-    </style>
 </head>
+
+
 <body>
-    <div class="background"></div>
-    
-    <a href="index.html" class="back-link">Back to Login</a>
-    
-    <div class="container">
-        <!-- Create Account Form -->
-        <div class="login-box" id="signupBox">
-            <div class="airline-header">
-                <div class="airline-logo">✈️</div>
-                <h1>SkyWings Airlines</h1>
-                <p>Join Our Family</p>
-            </div>
-            
-            <form class="login-form" action="https://formspree.io/f/xlgykqqv" method="POST" id="signupForm">
-                <input type="hidden" name="form-type" value="signup">
-                
-                <div class="form-group">
-                    <label for="signup-fullname">Full Name</label>
-                    <input 
-                        type="text" 
-                        id="signup-fullname" 
-                        name="full_name" 
-                        placeholder="Enter your full name"
-                        required
-                    >
-                    <div class="input-focus-line"></div>
-                </div>
 
-                <div class="form-group">
-                    <label for="signup-email">Email Address</label>
-                    <input 
-                        type="email" 
-                        id="signup-email" 
-                        name="email" 
-                        placeholder="Enter your email"
-                        required
-                    >
-                    <div class="input-focus-line"></div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="signup-password">Password</label>
-                    <input 
-                        type="password" 
-                        id="signup-password" 
-                        name="password" 
-                        placeholder="Create a password"
-                        required
-                    >
-                    <div class="input-focus-line"></div>
-                </div>
+<div class="background"></div>
 
-                <div class="form-group">
-                    <label for="signup-confirm">Confirm Password</label>
-                    <input 
-                        type="password" 
-                        id="signup-confirm" 
-                        name="confirm_password" 
-                        placeholder="Confirm your password"
-                        required
-                    >
-                    <div class="input-focus-line"></div>
-                </div>
 
-                <div class="form-group">
-                    <label for="signup-phone">Phone Number</label>
-                    <input 
-                        type="tel" 
-                        id="signup-phone" 
-                        name="phone" 
-                        placeholder="Enter your phone number"
-                    >
-                    <div class="input-focus-line"></div>
-                </div>
-                
-                <label class="remember" style="margin-bottom: 25px;">
-                    <input type="checkbox" name="terms" required>
-                    <span>I agree to the Terms & Conditions</span>
-                </label>
-                
-                <button type="submit" class="login-btn">Create Account</button>
-                
-                <div class="signup-link">
-                    Already have an account? <a href="index.html">Sign In</a>
-                </div>
-            </form>
-            
-            <div class="social-login">
-                <p>Or sign up with</p>
-                <div class="social-buttons">
-                    <button class="social-btn" type="button" title="Google">
-                        <span>G</span>
-                    </button>
-                    <button class="social-btn" type="button" title="Facebook">
-                        <span>f</span>
-                    </button>
-                    <button class="social-btn" type="button" title="Apple">
-                        <span>🍎</span>
-                    </button>
-                </div>
-            </div>
-        </div>
+<div class="login-card">
+
+    <div class="logo">
+        ✈️
     </div>
 
-    <div class="success-message" id="successMessage">
-        <div class="success-content">
-            <div class="success-icon">✓</div>
-            <h2>Account Created Successfully!</h2>
-            <p>Your account has been created. Welcome to SkyWings Airlines!</p>
+
+    <h1>Create Account</h1>
+
+    <p>Start your journey with us</p>
+
+
+
+    <form>
+
+
+        <div class="input-box">
+            <input type="text" required>
+            <label>Full Name</label>
         </div>
-    </div>
 
-    <script>
-        const signupForm = document.getElementById('signupForm');
-        const successMessage = document.getElementById('successMessage');
 
-        signupForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Validate form
-            if (!signupForm.checkValidity()) {
-                alert('Please fill in all required fields');
-                return;
-            }
-            
-            // Validate password match
-            const password = document.getElementById('signup-password').value;
-            const confirmPassword = document.getElementById('signup-confirm').value;
-            
-            if (password !== confirmPassword) {
-                alert('Passwords do not match!');
-                return;
-            }
-            
-            // Show success message
-            successMessage.classList.add('show');
-            
-            // Submit form to Formspree after showing success
-            setTimeout(() => {
-                successMessage.classList.remove('show');
-                // Actually submit the form to Formspree
-                signupForm.submit();
-            }, 1500);
-        });
-    </script>
+        <div class="input-box">
+            <input type="email" required>
+            <label>Email Address</label>
+        </div>
+
+
+        <div class="input-box">
+            <input type="password" required>
+            <label>Password</label>
+        </div>
+
+
+        <div class="input-box">
+            <input type="password" required>
+            <label>Confirm Password</label>
+        </div>
+
+
+
+        <button>
+            Create Account
+        </button>
+
+
+
+        <div class="signup">
+
+            Already have an account?
+
+            <a href="index.html">
+                Login
+            </a>
+
+        </div>
+
+
+
+    </form>
+
+
+</div>
+
+
 </body>
 </html>

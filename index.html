@@ -4,108 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Airline Login</title>
-    <link rel="stylesheet" href="static.css">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+    <!-- Background -->
     <div class="background"></div>
-    
-    <div class="container">
-        <!-- Login Form -->
-        <div class="login-box" id="loginBox">
-            <div class="airline-header">
-                <div class="airline-logo">✈️</div>
-                <h1>SkyWings Airlines</h1>
-                <p>Welcome Back</p>
-            </div>
-            
-            <form class="login-form" action="https://formspree.io/f/xlgykqqv" method="POST" id="loginForm">
-                <div class="form-group">
-                    <label for="login-email">Email or Username</label>
-                    <input 
-                        type="text" 
-                        id="login-email" 
-                        name="email" 
-                        placeholder="Enter your email or username"
-                        required
-                    >
-                    <div class="input-focus-line"></div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="login-password">Password</label>
-                    <input 
-                        type="password" 
-                        id="login-password" 
-                        name="password" 
-                        placeholder="Enter your password"
-                        required
-                    >
-                    <div class="input-focus-line"></div>
-                </div>
-                
-                <div class="remember-forgot">
-                    <label class="remember">
-                        <input type="checkbox" name="remember">
-                        <span>Remember me</span>
-                    </label>
-                    <a href="#" class="forgot-link">Forgot Password?</a>
-                </div>
-                
-                <button type="submit" class="login-btn">Sign In</button>
-                
-                <div class="signup-link">
-                    Don't have an account? <a href="signup.html">Create one</a>
-                </div>
-            </form>
-            
-            <div class="social-login">
-                <p>Or continue with</p>
-                <div class="social-buttons">
-                    <button class="social-btn" type="button" title="Google">
-                        <span>G</span>
-                    </button>
-                    <button class="social-btn" type="button" title="Facebook">
-                        <span>f</span>
-                    </button>
-                    <button class="social-btn" type="button" title="Apple">
-                        <span>🍎</span>
-                    </button>
-                </div>
-            </div>
+
+
+    <!-- Login Container -->
+    <div class="login-card">
+
+        <div class="logo">
+            ✈️
         </div>
+
+        <h1>Welcome Back</h1>
+        <p>Login to continue your journey</p>
+
+
+        <form>
+
+            <div class="input-box">
+                <input type="email" required>
+                <label>Email Address</label>
+            </div>
+
+
+            <div class="input-box">
+                <input type="password" required>
+                <label>Password</label>
+            </div>
+
+
+            <div class="options">
+
+                <label>
+                    <input type="checkbox">
+                    Remember me
+                </label>
+
+                <a href="#">
+                    Forgot Password?
+                </a>
+
+            </div>
+
+
+            <button type="submit">
+                Login
+            </button>
+
+
+            <div class="signup">
+                Don't have an account?
+                <a href="signup.html">
+                    Create Account
+                </a>
+            </div>
+
+
+        </form>
+
     </div>
 
-    <div class="success-message" id="successMessage">
-        <div class="success-content">
-            <div class="success-icon">✓</div>
-            <h2>Submitted Successfully!</h2>
-            <p>Your submission has been received.</p>
-        </div>
-    </div>
 
-    <script>
-        const loginForm = document.getElementById('loginForm');
-        const successMessage = document.getElementById('successMessage');
-
-        loginForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Validate form
-            if (!loginForm.checkValidity()) {
-                alert('Please fill in all required fields');
-                return;
-            }
-            
-            // Show success message
-            successMessage.classList.add('show');
-            
-            // Submit form to Formspree after showing success
-            setTimeout(() => {
-                successMessage.classList.remove('show');
-                // Reset and submit to Formspree
-                loginForm.submit();
-            }, 1500);
-        });
-    </script>
 </body>
 </html>
